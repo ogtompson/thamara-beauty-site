@@ -1,0 +1,25 @@
+// Paleta principal
+$color-terracotta: #C98270;      // destaque, botões, CTAs
+$color-cream: #FAF5EE;           // fundo principal
+$color-gold: #D6AE63;            // acabamentos, ícones, hover, bordas
+$color-brown-deep: #3D2C29;      // texto principal
+$color-sand: #E9D9CC;            // fundo secundário / seções alternadas
+$color-burnt-rose: #A96761;      // detalhes, links, pequenos destaques
+
+// Variações de opacidade/estado (úteis pra hover, disabled, overlay)
+$color-terracotta-hover: darken($color-terracotta, 8%);
+$color-gold-soft: rgba($color-gold, 0.15); // fundo suave, badges
+
+// Tipografia
+$font-heading: 'Instrument Serif', serif;
+$font-body: 'Work Sans', sans-serif;
+
+// Espaçamento
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 2rem;
+$spacing-lg: 4rem;
+
+// Border radius padrão
+$radius-base: 12px;
+$radius-pill: 999px; 
