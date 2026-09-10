@@ -1,0 +1,30 @@
+<header class="header">
+    <div class="header__container">
+  
+      <a href="/" class="header__logo">
+        Thamara Vasconcelos
+        <span class="header__logo-sub">Beauty Academy</span>
+      </a>
+  
+      <nav class="header__nav" [class.header__nav--open]="menuOpen()">
+        <a href="#servicos" (click)="closeMenu()">Serviços</a>
+        <a href="#portfolio" (click)="closeMenu()">Portfólio</a>
+        <a href="#sobre" (click)="closeMenu()">Sobre</a>
+        <a href="#local" (click)="closeMenu()">Local</a>
+      </nav>
+  
+      <a href="#agendar" class="header__cta">Agendar</a>
+  
+      <button
+        class="header__toggle"
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="menuOpen()"
+        aria-label="Abrir menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+  
+    </div>
+  </header>
