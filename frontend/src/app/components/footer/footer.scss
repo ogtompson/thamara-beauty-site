@@ -1,0 +1,75 @@
+@import '../../styles/variables';
+
+.footer {
+  background: $color-brown-deep;
+  color: $color-cream;
+  padding-top: $spacing-lg;
+}
+
+.footer__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-md $spacing-md;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $spacing-md;
+}
+
+.footer__brand {
+  h3 {
+    font-family: $font-heading;
+    margin: 0 0 4px;
+    color: $color-cream;
+  }
+
+  span {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $color-gold;
+  }
+}
+
+.footer__links,
+.footer__social {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+
+  a {
+    color: $color-cream;
+    text-decoration: none;
+    font-size: 0.9rem;
+    opacity: 0.85;
+
+    &:hover {
+      opacity: 1;
+      color: $color-gold;
+    }
+  }
+}
+
+.footer__info {
+  font-size: 0.85rem;
+  opacity: 0.8;
+
+  p {
+    margin: 0 0 $spacing-xs;
+  }
+}
+
+.footer__bottom {
+  border-top: 1px solid rgba($color-cream, 0.1);
+  text-align: center;
+  padding: $spacing-sm;
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+// --- Mobile ---
+@media (max-width: 768px) {
+  .footer__container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
