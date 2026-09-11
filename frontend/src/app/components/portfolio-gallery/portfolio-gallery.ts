@@ -1,5 +1,5 @@
-import { Component, Input, HostListener } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, Input, HostListener, PLATFORM_ID, inject } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 
 export interface PortfolioItem {
   imageUrl: string;
@@ -20,6 +20,9 @@ export class PortfolioGallery {
   hoveredIndex: number | null = null;
   isMobile = false;
 
+  private platformId = inject(PLATFORM_ID);
+  private isBrowser = isPlatformBrowser(this.platformId);
+
   constructor() {
     this.checkViewport();
   }
@@ -30,7 +33,9 @@ export class PortfolioGallery {
   }
 
   private checkViewport() {
-    this.isMobile = window.innerWidth < 768;
+    if (this.isBrowser) {
+      this.isMobile = window.innerWidth < 768;
+    }
   }
 
   onHover(index: number | null) {
