@@ -1,4 +1,4 @@
-@import '../../styles/variables';
+@import '../../../styles/variables';;
 
 .header {
   background: $color-cream;
@@ -51,20 +51,6 @@
   }
 }
 
-.header__cta {
-  background: $color-terracotta;
-  color: $color-cream;
-  padding: 0.6rem 1.4rem;
-  border-radius: $radius-pill;
-  font-size: 0.85rem;
-  text-decoration: none;
-  transition: background 0.2s ease;
-
-  &:hover {
-    background: $color-terracotta-hover;
-  }
-}
-
 .header__toggle {
   display: none;
   flex-direction: column;
@@ -99,8 +85,8 @@
     }
   }
 
-  .header__cta {
-    display: none; // ou reposiciona dentro do menu mobile, se preferir
+  app-button {
+    display: none;
   }
 
   .header__toggle {
