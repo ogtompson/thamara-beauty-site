@@ -1,5 +1,29 @@
 @import '../../../styles/variables';;
 
+.portfolio {
+  padding: $spacing-lg $spacing-md;
+  background: $color-sand; // alterna com o fundo creme das seções vizinhas, dá separação visual
+}
+
+.portfolio__header {
+  text-align: center;
+  margin-bottom: $spacing-lg;
+
+  h2 {
+    font-family: $font-heading;
+    color: $color-brown-deep;
+    font-size: 2rem;
+    margin: 4px 0 0;
+  }
+}
+
+.portfolio__eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: $color-terracotta;
+}
+
 .gallery {
   padding: $spacing-lg 0;
 }

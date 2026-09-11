@@ -1,36 +1,41 @@
-<div class="gallery" [class.gallery--mobile]="isMobile">
+<section class="portfolio" id="portfolio">
+  <div class="portfolio__header">
+    <span class="portfolio__eyebrow">Resultados</span>
+    <h2>Portfólio</h2>
+  </div>
 
-  <!-- Desktop: leque com hover -->
-  @if (!isMobile) {
-    <div class="gallery__stage">
-      @for (item of items; track item.imageUrl; let i = $index) {
-        <div
-          class="gallery__card"
-          [style.transform]="getCardStyle(i).transform"
-          [style.z-index]="getCardStyle(i).zIndex"
-          (mouseenter)="onHover(i)"
-          (mouseleave)="onHover(null)"
-          tabindex="0"
-        >
-          <img [src]="item.imageUrl" [alt]="item.title" loading="lazy" />
-        </div>
-      }
-    </div>
-  }
-
-  <!-- Mobile: scroll horizontal com snap -->
-  @if (isMobile) {
-    <div class="gallery__scroll">
-      @for (item of items; track item.imageUrl) {
-        <div class="gallery__scroll-card">
-          <img [src]="item.imageUrl" [alt]="item.title" loading="lazy" />
-          <div class="gallery__scroll-info">
-            <span>{{ item.category }}</span>
-            <h4>{{ item.title }}</h4>
+  <div class="gallery" [class.gallery--mobile]="isMobile">
+    <!-- Desktop: leque com hover -->
+    @if (!isMobile) {
+      <div class="gallery__stage">
+        @for (item of items; track item.imageUrl; let i = $index) {
+          <div
+            class="gallery__card"
+            [style.transform]="getCardStyle(i).transform"
+            [style.z-index]="getCardStyle(i).zIndex"
+            (mouseenter)="onHover(i)"
+            (mouseleave)="onHover(null)"
+            tabindex="0"
+          >
+            <img [src]="item.imageUrl" [alt]="item.title" loading="lazy" />
           </div>
-        </div>
-      }
-    </div>
-  }
+        }
+      </div>
+    }
 
-</div>
+    <!-- Mobile: scroll horizontal com snap -->
+    @if (isMobile) {
+      <div class="gallery__scroll">
+        @for (item of items; track item.imageUrl) {
+          <div class="gallery__scroll-card">
+            <img [src]="item.imageUrl" [alt]="item.title" loading="lazy" />
+            <div class="gallery__scroll-info">
+              <span>{{ item.category }}</span>
+              <h4>{{ item.title }}</h4>
+            </div>
+          </div>
+        }
+      </div>
+    }
+  </div>
+</section>
