@@ -1,0 +1,17 @@
+@import 'styles/variables';
+
+body {
+  background-color: $color-cream;
+  color: $color-brown-deep;
+  font-family: $font-body;
+  margin: 0;
+}
+
+h1, h2, h3, h4 {
+  font-family: $font-heading;
+  color: $color-brown-deep;
+}
+
+a {
+  color: $color-burnt-rose;
+}
