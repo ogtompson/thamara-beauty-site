@@ -1,0 +1,89 @@
+@import '../../../styles/variables';
+
+.location {
+  padding: $spacing-lg $spacing-md;
+  background: $color-cream;
+}
+
+.location__header {
+  text-align: center;
+  margin-bottom: $spacing-lg;
+
+  h2 {
+    font-family: $font-heading;
+    color: $color-brown-deep;
+    font-size: 2rem;
+    margin: 4px 0 0;
+  }
+}
+
+.location__eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: $color-terracotta;
+}
+
+.location__map {
+  max-width: 1100px;
+  margin: 0 auto;
+  height: 400px;
+  border-radius: $radius-base;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba($color-brown-deep, 0.12);
+}
+
+.location__cards {
+  max-width: 1100px;
+  margin: -40px auto 0;
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: $spacing-md;
+  padding: 0 $spacing-sm;
+}
+
+.location__card {
+  background: $color-cream;
+  border-radius: $radius-base;
+  padding: $spacing-md;
+  text-align: center;
+  box-shadow: 0 10px 24px rgba($color-brown-deep, 0.1);
+
+  h4 {
+    font-family: $font-heading;
+    color: $color-brown-deep;
+    margin: $spacing-xs 0 4px;
+    font-size: 1.1rem;
+  }
+
+  p {
+    font-size: 0.85rem;
+    color: rgba($color-brown-deep, 0.7);
+    margin: 0;
+  }
+}
+
+.location__card-icon {
+  width: 44px;
+  height: 44px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: $color-gold-soft;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-terracotta;
+
+  svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .location__cards {
+    margin-top: $spacing-sm;
+  }
+}
