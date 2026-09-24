@@ -18,4 +18,17 @@ describe('Home', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should compose all institutional sections', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+
+    expect(compiled.querySelector('app-header')).toBeTruthy();
+    expect(compiled.querySelector('app-hero')).toBeTruthy();
+    expect(compiled.querySelector('app-services')).toBeTruthy();
+    expect(compiled.querySelector('app-portfolio-gallery')).toBeTruthy();
+    expect(compiled.querySelector('app-about')).toBeTruthy();
+    expect(compiled.querySelector('app-testimonials')).toBeTruthy();
+    expect(compiled.querySelector('app-location')).toBeTruthy();
+    expect(compiled.querySelector('app-footer')).toBeTruthy();
+  });
 });
