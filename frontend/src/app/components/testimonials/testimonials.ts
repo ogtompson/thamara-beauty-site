@@ -18,4 +18,5 @@ export interface Testimonial {
 })
 export class Testimonials {
   @Input() items: Testimonial[] = [];
+  @Input() animationDuration = 36;
 }
