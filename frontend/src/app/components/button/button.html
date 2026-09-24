@@ -1,9 +1,9 @@
 @if (href) {
     <a [href]="href" class="btn" [class]="'btn--' + variant">
-      <ng-content />
+      {{texto}}<ng-content />
     </a>
   } @else {
     <button [type]="type" class="btn" [class]="'btn--' + variant">
-      <ng-content />
+     aaa <ng-content />
     </button>
   }

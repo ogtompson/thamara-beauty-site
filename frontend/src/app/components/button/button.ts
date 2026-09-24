@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 export type ButtonVariant = 'primary' | 'secondary' | 'ghost';
@@ -11,6 +11,7 @@ export type ButtonVariant = 'primary' | 'secondary' | 'ghost';
   styleUrl: './button.scss'
 })
 export class Button {
+  @Input() texto:string ='Agendar';
   @Input() variant: ButtonVariant = 'primary';
   @Input() href?: string;
   @Input() type: 'button' | 'submit' = 'button';
