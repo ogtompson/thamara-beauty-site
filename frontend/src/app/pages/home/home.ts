@@ -4,7 +4,7 @@ import { PortfolioGallery } from '../../components/portfolio-gallery/portfolio-g
 import { Footer } from '../../components/footer/footer';
 
 @Component({
-  imports: [Header,PortfolioGallery,Footer],
+  imports: [Header, PortfolioGallery, Footer],
   selector: 'app-home',
   styleUrl: './home.scss',
   templateUrl: './home.html',
