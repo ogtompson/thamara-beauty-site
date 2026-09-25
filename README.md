@@ -1,68 +1,143 @@
 # Thamara Vasconcelos Beauty Academy
 
-Site para o estúdio de micropigmentação e embelezamento do olhar da Thamara Vasconcelos, em Olinda - PE. Hoje o negócio funciona só via Instagram, WhatsApp e o Minha Agenda Online (maapp) — a ideia é dar a ele uma vitrine própria, com espaço para serviços, portfólio e agendamento.
+Site institucional para o estúdio de micropigmentação e embelezamento do olhar da Thamara Vasconcelos, localizado em Olinda, Pernambuco.
 
-Projeto colaborativo de [nomes/GitHub do grupo].
+O projeto busca oferecer uma vitrine própria para o negócio, reunindo apresentação profissional, serviços e valores, portfólio, depoimentos, localização e canais de contato. Em etapas posteriores, a aplicação também deverá oferecer um fluxo próprio de agendamento.
 
-## Fase 1 (MVP)
+## Estado atual
 
-- Apresentação do estúdio, serviços e valores
-- Portfólio
-- Localização e horário de funcionamento
-- Links para Instagram e WhatsApp
-- Agendamento simples
+O frontend do MVP já possui uma Home integrada e responsiva, composta por:
 
-Pagamento de sinal, integração com Google Agenda e chatbot ficam para depois do MVP no ar.
+- apresentação principal do estúdio;
+- catálogo de serviços e valores;
+- portfólio em mosaico;
+- apresentação da profissional;
+- depoimentos;
+- mapa e informações de contato;
+- navegação suave entre as seções.
+
+O backend possui a estrutura inicial em Spring Boot, com as dependências de persistência, validação e API REST configuradas. A próxima etapa prevista é implementar as entidades definidas na modelagem e seus respectivos repositórios Spring Data JPA.
 
 ## Stack
 
-| Camada     | Tecnologia                       |
-|------------|----------------------------------|
-| Frontend   | React + Vite + Tailwind CSS      |
-| Backend    | NestJS (Node/TypeScript)         |
-| Banco      | PostgreSQL                       |
-| Hospedagem | a definir                        |
-
-> Stack sujeita a ajuste conforme o grupo definir — atualizar esta tabela caso mude.
+| Camada | Tecnologia |
+| --- | --- |
+| Frontend | Angular 22, TypeScript, SCSS e SSR com Express |
+| Testes do frontend | Vitest |
+| Backend | Java 21 e Spring Boot 4 |
+| Persistência | Spring Data JPA e Hibernate |
+| Banco de dados | PostgreSQL |
+| Build do backend | Maven Wrapper |
+| Hospedagem | A definir |
 
 ## Estrutura do repositório
 
-```
+```text
 .
-├── frontend/       # aplicação React
-├── backend/        # API NestJS
-├── docs/           # requisitos, decisões de arquitetura, anotações de reunião
+├── frontend/   # aplicação Angular e servidor SSR
+├── backend/    # API Spring Boot
+├── docs/       # documentação complementar do projeto
 └── README.md
 ```
 
-## Branching e fluxo de trabalho
+## Pré-requisitos
 
-- `main` → produção / estável
-- `dev` → integração
-- `feat/nome-da-subtask` → uma branch por tarefa, PR pequeno e revisável, merge + delete depois
+- Git;
+- Node.js e npm;
+- Java 21;
+- PostgreSQL.
 
-## Como rodar localmente
+## Como executar localmente
 
-### Frontend
+### 1. Clonar o repositório
+
+```bash
+git clone https://github.com/ogtompson/thamara-beauty-site.git
+cd thamara-beauty-site
+```
+
+### 2. Frontend
+
 ```bash
 cd frontend
 npm install
-npm run dev
+npm start
 ```
 
-### Backend
+O frontend ficará disponível em `http://localhost:4200`.
+
+Comandos úteis:
+
+```bash
+npm run build
+npm test -- --watch=false
+npm run serve:ssr:frontend
+```
+
+O comando de SSR deve ser executado depois de `npm run build`.
+
+### 3. Banco de dados
+
+Crie um banco PostgreSQL para o ambiente local:
+
+```sql
+CREATE DATABASE thamara_beauty;
+```
+
+Antes de iniciar o backend, ajuste a conexão em `backend/src/main/resources/application.properties` de acordo com o usuário e a senha do seu PostgreSQL local.
+
+### 4. Backend
+
+No Windows:
+
+```powershell
+cd backend
+.\mvnw.cmd spring-boot:run
+```
+
+No Linux ou macOS:
+
 ```bash
 cd backend
-npm install
-npm run start:dev
+./mvnw spring-boot:run
 ```
 
-## Time
+Por padrão, a API ficará disponível em `http://localhost:8080`.
 
-| Nome | Responsabilidade |
-|------|------------------|
-|      |                  |
+Para executar os testes do backend:
+
+```powershell
+.\mvnw.cmd test
+```
+
+ou, no Linux e macOS:
+
+```bash
+./mvnw test
+```
+
+## Fluxo de trabalho
+
+- `main`: versão estável ou destinada à produção;
+- `dev`: branch de integração do projeto;
+- `feat/<numero>-<descricao>`: implementação de funcionalidades;
+- `fix/<descricao>`: correções;
+- `docs/<descricao>`: alterações exclusivamente documentais.
+
+As alterações devem partir da `dev` e retornar a ela por pull request. Prefira commits pequenos, coesos e revisáveis, separados por responsabilidade.
+
+## Próximas etapas
+
+No curto prazo:
+
+1. implementar as classes Java das entidades definidas na modelagem;
+2. criar os repositórios Spring Data JPA correspondentes;
+3. adicionar testes de persistência;
+4. iniciar os serviços e endpoints do backend;
+5. substituir os conteúdos provisórios restantes do frontend por dados definitivos.
+
+Pagamento de sinal, integração com Google Agenda e chatbot permanecem fora do escopo imediato do MVP.
 
 ## Board
 
-Link do Trello: https://trello.com/invite/b/6a7d0e70e73808200f7bcb37/ATTI94a64346e3a41099b5d8346419f3e34681951CE4/thamara-site
+[Acompanhar o projeto no Trello](https://trello.com/invite/b/6a7d0e70e73808200f7bcb37/ATTI94a64346e3a41099b5d8346419f3e34681951CE4/thamara-site)
