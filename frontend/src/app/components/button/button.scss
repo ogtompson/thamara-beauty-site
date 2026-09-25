@@ -1,0 +1,50 @@
+@import '../../../styles/variables';;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.75rem;
+  border-radius: $radius-pill;
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+
+  &:active {
+    transform: scale(0.97);
+  }
+
+  &--primary {
+    background: $color-terracotta;
+    color: $color-cream;
+
+    &:hover {
+      background: $color-terracotta-hover;
+    }
+  }
+
+  &--secondary {
+    background: transparent;
+    color: $color-brown-deep;
+    border: 1.5px solid $color-brown-deep;
+
+    &:hover {
+      background: $color-brown-deep;
+      color: $color-cream;
+    }
+  }
+
+  &--ghost {
+    background: transparent;
+    color: $color-terracotta;
+    padding: 0.5rem 1rem;
+
+    &:hover {
+      color: $color-terracotta-hover;
+    }
+  }
+}

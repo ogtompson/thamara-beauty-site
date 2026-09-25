@@ -1,0 +1,43 @@
+<section class="hero">
+    <div class="hero__container">
+  
+      <div class="hero__content">
+        <span class="hero__location">Olinda · Jardim Atlântico</span>
+  
+        <h1 class="hero__title">
+          O olhar é a primeira coisa que <span class="hero__highlight">as pessoas leem</span> em você.
+        </h1>
+  
+        <p class="hero__subtitle">
+          Especialistas em micropigmentação e embelezamento do olhar. Design de sobrancelhas e cílios sob medida para cada rosto.
+        </p>
+  
+        <div class="hero__actions">
+          <app-button variant="primary" href="#agendar">Agendar no WhatsApp</app-button>
+          <app-button variant="secondary" href="#servicos">Ver Serviços e Valores</app-button>
+        </div>
+  
+        <div class="hero__stats">
+          @for (stat of stats; track stat.label) {
+            <div class="hero__stat">
+              <strong>{{ stat.value }}</strong>
+              <span>{{ stat.label }}</span>
+            </div>
+          }
+        </div>
+      </div>
+  
+      <div class="hero__gallery">
+        <div class="hero__image hero__image--main">
+          <img [src]="images[0]" alt="Trabalho de sobrancelha" loading="eager" />
+        </div>
+        <div class="hero__image hero__image--secondary">
+          <img [src]="images[1]" alt="Trabalho de cílios" loading="eager" />
+        </div>
+        <div class="hero__image hero__image--tertiary">
+          <img [src]="images[2]" alt="Ambiente do estúdio" loading="eager" />
+        </div>
+      </div>
+  
+    </div>
+  </section>

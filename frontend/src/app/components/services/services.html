@@ -1,0 +1,27 @@
+<section class="services" id="servicos">
+    <div class="services__header">
+      <span class="services__eyebrow">Menu</span>
+      <h2>Serviços e Valores</h2>
+    </div>
+  
+    <div class="services__grid">
+      @for (category of categories; track category.title) {
+        <div class="services__category">
+          <h3>{{ category.title }}</h3>
+          <p class="services__category-desc">{{ category.description }}</p>
+  
+          <ul class="services__list">
+            @for (item of category.items; track item.name) {
+              <li class="services__item">
+                <div class="services__item-info">
+                  <strong>{{ item.name }}</strong>
+                  <span>{{ item.duration }}</span>
+                </div>
+                <span class="services__item-price">{{ item.price }}</span>
+              </li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+  </section>
