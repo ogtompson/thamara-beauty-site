@@ -1,7 +1,15 @@
 <app-header></app-header>
 
 <main>
-  <app-portfolio-gallery></app-portfolio-gallery>
+  <app-hero />
+  <app-services [categories]="serviceCategories" />
+  <app-portfolio-gallery [items]="portfolioItems" />
+  <app-about
+    bio="Atendimento dedicado ao embelezamento do olhar, com técnicas escolhidas para valorizar a beleza de cada cliente."
+    specialty="Micropigmentação, design de sobrancelhas e cílios em Olinda."
+  />
+  <app-testimonials [items]="testimonials" />
+  <app-location [cards]="locationCards" />
 </main>
 
 <app-footer></app-footer>
