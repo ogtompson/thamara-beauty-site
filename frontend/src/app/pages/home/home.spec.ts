@@ -31,4 +31,14 @@ describe('Home', () => {
     expect(compiled.querySelector('app-location')).toBeTruthy();
     expect(compiled.querySelector('app-footer')).toBeTruthy();
   });
+
+  it('should project labels inside reusable buttons', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+    const buttonLabels = Array.from(compiled.querySelectorAll('.btn')).map((button) =>
+      button.textContent?.trim(),
+    );
+
+    expect(buttonLabels).toContain('Agendar');
+    expect(buttonLabels).toContain('Ver Serviços e Valores');
+  });
 });

@@ -7,10 +7,10 @@
       </a>
   
       <nav class="header__nav" [class.header__nav--open]="menuOpen()">
-        <a href="#servicos" (click)="closeMenu()">Serviços</a>
-        <a href="#portfolio" (click)="closeMenu()">Portfólio</a>
-        <a href="#sobre" (click)="closeMenu()">Sobre</a>
-        <a href="#local" (click)="closeMenu()">Local</a>
+        <a href="#servicos" (click)="navigate($event, 'servicos')">Serviços</a>
+        <a href="#portfolio" (click)="navigate($event, 'portfolio')">Portfólio</a>
+        <a href="#sobre" (click)="navigate($event, 'sobre')">Sobre</a>
+        <a href="#local" (click)="navigate($event, 'local')">Local</a>
       </nav>
   
       <app-button variant="primary" href="#agendar">Agendar</app-button>

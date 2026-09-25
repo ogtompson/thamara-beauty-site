@@ -1,8 +1,10 @@
 @import '../../../styles/variables';
 
 .services {
-  padding: $spacing-lg $spacing-md;
-  background: $color-cream;
+  padding: 5.5rem $spacing-md;
+  background:
+    linear-gradient(rgba($color-cream, 0.96), rgba($color-cream, 0.96)),
+    radial-gradient(circle at 12% 18%, $color-gold-soft, transparent 30%);
 }
 
 .services__header {
@@ -25,20 +27,33 @@
 }
 
 .services__grid {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: $spacing-lg;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: $spacing-md;
 }
 
 .services__category {
-    h3 {
-        font-family: $font-heading;
-        color: $color-brown-deep; // ← corrigido
-        font-size: 1.4rem;
-        margin: 0 0 4px;
-    }
+  padding: $spacing-md;
+  border: 1px solid rgba($color-brown-deep, 0.09);
+  border-radius: $radius-base;
+  background: rgba($color-cream, 0.72);
+  box-shadow: 0 10px 30px rgba($color-brown-deep, 0.05);
+  transition: transform 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba($color-terracotta, 0.28);
+    box-shadow: 0 16px 36px rgba($color-brown-deep, 0.09);
+  }
+
+  h3 {
+    font-family: $font-heading;
+    color: $color-brown-deep;
+    font-size: 1.4rem;
+    margin: 0 0 4px;
+  }
 }
 
 .services__category-desc {
@@ -59,6 +74,12 @@
   align-items: baseline;
   padding: $spacing-xs 0;
   border-bottom: 1px solid rgba($color-brown-deep, 0.08);
+  transition: padding-inline 180ms ease, background 180ms ease;
+
+  &:hover {
+    padding-inline: $spacing-xs;
+    background: rgba($color-sand, 0.42);
+  }
 
   &:last-child {
     border-bottom: none;
@@ -86,4 +107,18 @@
   color: $color-terracotta;
   white-space: nowrap;
   margin-left: $spacing-sm;
+}
+
+@media (max-width: 760px) {
+  .services {
+    padding-block: 4.5rem;
+  }
+
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .services__category { transition: none; }
 }
