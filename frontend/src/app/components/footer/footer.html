@@ -1,4 +1,4 @@
-<footer class="footer">
+<footer class="footer section-reveal">
   <div class="footer__container">
 
     <div class="footer__brand">
@@ -8,10 +8,10 @@
 
     <nav class="footer__links">
       <span class="footer__col-title">Navegação</span>
-      <a href="#servicos">Serviços</a>
-      <a href="#portfolio">Portfólio</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#local">Local</a>
+      <a href="#servicos" (click)="scrollToSection($event, 'servicos')">Serviços</a>
+      <a href="#portfolio" (click)="scrollToSection($event, 'portfolio')">Portfólio</a>
+      <a href="#sobre" (click)="scrollToSection($event, 'sobre')">Sobre</a>
+      <a href="#local" (click)="scrollToSection($event, 'local')">Local</a>
     </nav>
 
     <div class="footer__contact">

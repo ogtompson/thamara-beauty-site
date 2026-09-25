@@ -14,4 +14,5 @@ export class About {
   @Input() name = 'Thamara Vasconcelos';
   @Input() bio = '';
   @Input() specialty = '';
+
 }

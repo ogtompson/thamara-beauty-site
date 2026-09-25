@@ -1,41 +1,19 @@
-<section class="portfolio" id="portfolio">
+<section class="portfolio section-reveal" id="portfolio" aria-labelledby="portfolio-title">
   <div class="portfolio__header">
-    <span class="portfolio__eyebrow">Resultados</span>
-    <h2>Portfólio</h2>
+    <span class="portfolio__eyebrow">Resultados reais</span>
+    <h2 id="portfolio-title">Portfólio</h2>
+    <p>Conheça alguns trabalhos realizados com cuidado, técnica e atenção aos detalhes.</p>
   </div>
 
-  <div class="gallery" [class.gallery--mobile]="isMobile">
-    <!-- Desktop: leque com hover -->
-    @if (!isMobile) {
-      <div class="gallery__stage">
-        @for (item of items; track item.imageUrl; let i = $index) {
-          <div
-            class="gallery__card"
-            [style.transform]="getCardStyle(i).transform"
-            [style.z-index]="getCardStyle(i).zIndex"
-            (mouseenter)="onHover(i)"
-            (mouseleave)="onHover(null)"
-            tabindex="0"
-          >
-            <img [src]="item.imageUrl" [alt]="item.title" loading="lazy" />
-          </div>
-        }
-      </div>
-    }
-
-    <!-- Mobile: scroll horizontal com snap -->
-    @if (isMobile) {
-      <div class="gallery__scroll">
-        @for (item of items; track item.imageUrl) {
-          <div class="gallery__scroll-card">
-            <img [src]="item.imageUrl" [alt]="item.title" loading="lazy" />
-            <div class="gallery__scroll-info">
-              <span>{{ item.category }}</span>
-              <h4>{{ item.title }}</h4>
-            </div>
-          </div>
-        }
-      </div>
+  <div class="gallery" role="list">
+    @for (item of items; track item.imageUrl) {
+      <article class="gallery__card" role="listitem">
+        <img [src]="item.imageUrl" [alt]="item.title" loading="lazy" />
+        <div class="gallery__card-info">
+          <span>{{ item.category }}</span>
+          <h3>{{ item.title }}</h3>
+        </div>
+      </article>
     }
   </div>
 </section>

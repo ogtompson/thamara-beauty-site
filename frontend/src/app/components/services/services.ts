@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
 
 export interface ServiceItem {
   name: string;
@@ -18,7 +18,7 @@ export interface ServiceCategory {
   standalone: true,
   imports: [CommonModule],
   templateUrl: './services.html',
-  styleUrl: './services.scss'
+  styleUrl: './services.scss',
 })
 export class Services {
   @Input() categories: ServiceCategory[] = [];

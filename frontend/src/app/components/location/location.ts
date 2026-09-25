@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 export interface LocationInfoCard {
-  icon: 'address' | 'whatsapp' | 'clock';
+  icon: 'address' | 'whatsapp' | 'clock' | 'instagram';
   label: string;
   value: string;
 }
